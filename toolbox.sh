@@ -16,7 +16,7 @@ rm -rf /tmp/dumps
 mkdir -p --mode=000 /tmp/dumps
 
 function unload {
-    echo "Unloading cheat..."
+    echo "Unloading..."
     echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
     if grep -q "$libname" "/proc/$csgo_pid/maps"; then
         $gdb -n -q -batch -ex "attach $csgo_pid" \
@@ -32,7 +32,7 @@ function unload {
 }
 
 function load {
-    echo "Loading cheat..."
+    echo "Loading..."
     echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope > /dev/null
     sudo cp build/libaurium.so /usr/lib/$libname
     gdbOut=$(
@@ -46,14 +46,14 @@ function load {
     )
     lastLine="${gdbOut##*$'\n'}"
     if [[ "$lastLine" != "\$1 = (void *) 0x0" ]]; then
-      echo "Successfully injected!"
+      echo "Successfully loaded!"
     else
-      echo "Injection failed, make sure you have compiled."
+      echo "Loading failed, make sure you have compiled."
     fi
 }
 
 function load_debug {
-    echo "Loading cheat..."
+    echo "Loading..."
     echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
     sudo cp build/libaurium.so /usr/lib/$libname
     $gdb -n -q -batch \
@@ -68,7 +68,7 @@ function load_debug {
 }
 
 function build {
-    echo "Building cheat..."
+    echo "Building..."
     mkdir -p build
     cd build
     cmake -D CMAKE_BUILD_TYPE=Release ..
@@ -77,7 +77,7 @@ function build {
 }
 
 function build_debug {
-    echo "Building cheat..."
+    echo "Building..."
     mkdir -p build
     cd build
     cmake -D CMAKE_BUILD_TYPE=Debug ..
@@ -120,22 +120,22 @@ case $keys in
     -h|--help)
         echo "
  help
-Toolbox script for aurium the beste lincuck cheat 2021
+Toolbox script for aurium
 =======================================================================
 | Argument             | Description                                  |
 | -------------------- | -------------------------------------------- |
-| -u (--unload)        | Unload the cheat from CS:GO if loaded.       |
-| -l (--load)          | Load/inject the cheat via gdb.               |
-| -ld (--load_debug)   | Load/inject the cheat and debug via gdb.     |
+| -u (--unload)        | Unload.                                      |
+| -l (--load)          | Load via gdb.                                |
+| -ld (--load_debug)   | Load and debug via gdb.                      |
 | -b (--build)         | Build to the build/ dir.                     |
 | -bd (--build_debug)  | Build to the build/ dir as debug.            |
-| -p (--pull)          | Update the cheat.                            |
+| -p (--pull)          | Update.                                      |
 | -h (--help)          | Show help.                                   |
 =======================================================================
 
 All args are executed in the order they are written in, for
-example, \"-p -u -b -l\" would update the cheat, then unload, then build it, and
-then load it back into csgo.
+example, \"-p -u -b -l\" would update, then unload, then build it, and
+then load it back.
 "
         exit
         ;;
