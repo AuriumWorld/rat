@@ -3,7 +3,7 @@ description: Create a report to help us improve and fix bugs.
 title: "[Bug]: "
 labels: [bug]
 # assignees:
-#   - seksea
+#   - auriumfps
 body:
   - type: markdown
     attributes:

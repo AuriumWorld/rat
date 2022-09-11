@@ -123,7 +123,7 @@ void Menu::onSwapWindow(SDL_Window* window) {
 
 void Menu::drawMenu() {
     ImGui::SetNextWindowSize(ImVec2{900, 627});
-    ImGui::Begin("gamesneeze-linux", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+    ImGui::Begin("aurium-linux", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 4));
     ImGui::Text("game"); ImGui::SameLine(); ImGui::PopStyleVar();
     if (ImGui::IsItemClicked()) {

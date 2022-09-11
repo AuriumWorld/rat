@@ -34,7 +34,7 @@ enum ConfigItemType {
 
 namespace Config {
     inline std::vector<std::string> cfgFiles;
-    inline char configFileName[128] = "gamesneeze.cfg";
+    inline char configFileName[128] = "aurium.cfg";
     inline char cfgDir[256];
 
     class ConfigItem {
@@ -371,7 +371,7 @@ namespace Config {
         Config::cfgFiles.clear();
         char path[128];
         strcpy(path, getenv("HOME"));
-        strcat(path, "/.gamesneeze");
+        strcat(path, "/.aurium");
         if (!std::filesystem::is_directory(path)) {
             std::filesystem::create_directory(path);
         }
@@ -468,7 +468,7 @@ namespace Config {
 
     inline void init() {
         strcpy(cfgDir, getenv("HOME"));
-        strcat(cfgDir, "/.gamesneeze/configs/");
+        strcat(cfgDir, "/.aurium/configs/");
         reloadCfgList();
         if (cfgFiles.size() == 1) {
             strcpy(configFileName, cfgFiles[0].c_str());

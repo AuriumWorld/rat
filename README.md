@@ -48,8 +48,8 @@
 ```sudo zypper install gcc gdb SDL2-devel cmake git llvm-clang llvm-gold```
 
 ```sh
-git clone https://github.com/seksea/gamesneeze
-cd gamesneeze
+git clone https://github.com/auriumfps/aurium
+cd aurium
 chmod +x toolbox.sh
 ./toolbox.sh -p -u -b -l # pull, unload cheat if currently injected, build and then load, use -h for help
 ```
