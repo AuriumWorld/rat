@@ -123,9 +123,9 @@ void Menu::onSwapWindow(SDL_Window* window) {
 
 void Menu::drawMenu() {
     ImGui::SetNextWindowSize(ImVec2{900, 627});
-    ImGui::Begin("gamesneeze-linux", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+    ImGui::Begin("aurium", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 4));
-    ImGui::Text("game"); ImGui::SameLine(); ImGui::PopStyleVar();
+    ImGui::Text("aurium"); ImGui::SameLine(); ImGui::PopStyleVar();
     if (ImGui::IsItemClicked()) {
         system("xdg-open https://discord.gg/tycXd9nSbv &"); //if it works it works lmao
     }
@@ -133,7 +133,7 @@ void Menu::drawMenu() {
         ImGui::SetTooltip("Click for discord!");
     }
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(490, 5));
-    ImGui::TextColored(ImColor(108, 195, 18, 255), "sneeze");
+    ImGui::TextColored(ImColor(108, 195, 18, 255), ".us");
     if (ImGui::IsItemClicked()) {
         system("xdg-open https://discord.gg/tycXd9nSbv &"); //if it works it works lmao
     }
