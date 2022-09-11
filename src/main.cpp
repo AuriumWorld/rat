@@ -35,7 +35,7 @@ Powered by...\n\
             Log::log(ERR, "Failed to initialise hooks!");
         }
 
-        Features::Notifications::addNotification(ImColor(30, 255, 30), "[gs] Successfully injected!");
+        Features::Notifications::addNotification(ImColor(30, 255, 30), "[gs] Successfully loaded!");
         Log::log(LOG, "Initialised!");
     }
     catch(const std::exception& e) {
@@ -46,7 +46,7 @@ Powered by...\n\
 /* Called on uninject, if you ld_preload with this, then it will call it as soon as you inject, so only have this if PRELOAD compile def is not set */
 #ifndef PRELOAD
 void __attribute__((destructor)) Unload() {
-    Log::log(LOG, "Uninjecting...");
+    Log::log(LOG, "Unloading...");
 
     /* Unload hooks */
     if (!Hooks::unload()) {
@@ -58,7 +58,7 @@ void __attribute__((destructor)) Unload() {
         Log::log(ERR, "Failed to unload interfaces!");
     }
 
-    Log::log(LOG, "Uninjected!\n");
+    Log::log(LOG, "Unloaded!\n");
 }
 #endif
 
