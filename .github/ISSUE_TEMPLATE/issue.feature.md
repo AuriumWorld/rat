@@ -4,7 +4,7 @@ about: Suggest an idea for this project
 
 ---
 
-<!--- If you are new to cheating or this cheat our issue tracker is **ONLY** used for reporting bugs or requesting features. Please use [our discord server](https://discord.gg/SCHsWHFJMb) for general support. -->
+<!--- If you are new to cheating or this cheat our issue tracker is **ONLY** used for reporting bugs or requesting features. Please use [our discord server](https://discord.gg/tycXd9nSbv) for general support. -->
 
 <!--- Please ask yourself if this modification is something the whole userbase will benefit from before submitting -->
 
